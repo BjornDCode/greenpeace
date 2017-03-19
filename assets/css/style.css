@@ -1,0 +1,247 @@
+/*  Fonts  */
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: local('HelveticaNeue Bold'), local('HelveticaNeueBold'),
+		url('../fonts/HelveticaNeueBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: local('HelveticaNeue Regular'), local('HelveticaNeueRegular'),
+		url('../fonts/HelveticaNeueRegular.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: local('HelveticaNeue Medium'), local('HelveticaNeueMedium'),
+		url('../fonts/HelveticaNeueMedium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+/*  Base  */
+
+* {
+    font-family: 'HelveticaNeue', sans-serif;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.main-section {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    h2 {
+        font-size: 65px;
+    }
+    h3 {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 990px) {
+    h2 {
+        font-size: 75px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+}
+
+/*  Slider Section  */
+
+.slider-section {
+    background: #34B79E;
+    color: #fff;
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.slider-section h2 {
+    margin-bottom: 30px;
+}
+
+.slider-section h3 {
+    margin-bottom: 30px;
+    background: rgba(0,0,0, 0.5);
+    padding: 5px;
+}
+
+.slider-section .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0, 0);
+}
+
+.days1 .slider-section .overlay {
+    background: rgba(0,0,0, 0);
+}
+
+.days2 .slider-section .overlay {
+    background: rgba(0,0,0, 0.1);
+}
+
+.days3 .slider-section .overlay {
+    background: rgba(0,0,0, 0.2);
+}
+
+.days4 .slider-section .overlay {
+    background: rgba(0,0,0, 0.3);
+}
+
+.days5 .slider-section .overlay {
+    background: rgba(0,0,0, 0.4);
+}
+
+.days6 .slider-section .overlay {
+    background: rgba(0,0,0, 0.5);
+}
+
+.days7 .slider-section .overlay {
+    background: rgba(0,0,0, 0.6);
+}
+
+/*  Slider  */
+
+.slider {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    /*fix for FF unable to apply focus style bug */
+    /*border: 1px solid white;*/
+
+    /*required for proper track sizing in FF*/
+    width: 100%;
+}
+.slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 35px;
+    background: #DED6D6;
+    border: none;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 55px;
+    width: 20px;
+    background: #34B79E;
+    margin-top: -10px;
+}
+.slider:focus {
+    outline: none;
+}
+.slider:focus::-webkit-slider-runnable-track {
+    background: #DED6D6;
+}
+
+.slider::-moz-range-track {
+    width: 100%;
+    height: 35px;
+    background: #DED6D6;
+    border: none;
+}
+.slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 55px;
+    width: 20px;
+    background: #34B79E;
+    margin-top: -10px;
+}
+
+/*hide the outline behind the border*/
+.slider:-moz-focusring{
+    outline: 1px solid pink;
+    outline-offset: -1px;
+}
+
+.slider::-ms-track {
+    width: 100%;
+    height: 35px;
+
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+.slider::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+.slider::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+.slider::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #34B79E;
+}
+.slider:focus::-ms-fill-lower {
+    background: #888;
+}
+.slider:focus::-ms-fill-upper {
+    background: #DED6D6;
+}
+
+@media (min-width: 600px) {
+    .slider-section h2 {
+        margin-bottom: 100px;
+    }
+
+    .slider-section h3 {
+        margin-bottom: 30px;
+    }
+    .slider {
+        width: 300px;
+    }
+    .slider::-webkit-slider-runnable-track {
+        width: 300px;
+    }
+    .slider::-moz-range-track {
+        width: 300px;
+    }
+    .slider::-ms-track {
+        width: 300px;
+    }
+
+}
