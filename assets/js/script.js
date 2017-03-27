@@ -40,12 +40,12 @@ var impact = (function() {
     };
 
     function updateNumbers(days) {
-        meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7 * days);
-        waterOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['water'] / 7 * days);
-        landOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] / 7 * days);
-        treesOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] * dataPerDay['trees'] / 7 * days);
-        co2OutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['co2'] / 7 * days);
-        wasteOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['waste'] / 7 * days);
+        meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7 * days).toLocaleString();
+        waterOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['water'] / 7 * days).toLocaleString();
+        landOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] / 7 * days).toLocaleString();
+        treesOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] * dataPerDay['trees'] / 7 * days).toLocaleString();
+        co2OutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['co2'] / 7 * days).toLocaleString();
+        wasteOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['waste'] / 7 * days).toLocaleString();
     }
 
     updateNumbers(5);
@@ -75,12 +75,12 @@ var savings = (function() {
     };
 
     function updateNumbers(days) {
-        meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7);
-        waterOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['water'] / 7);
-        landOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] / 7);
-        treesOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] * dataPerDay['trees'] / 7);
-        co2OutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['co2'] / 7);
-        wasteOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['waste'] / 7);
+        meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7).toLocaleString();
+        waterOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['water'] / 7).toLocaleString();
+        landOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] / 7).toLocaleString();
+        treesOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] * dataPerDay['trees'] / 7).toLocaleString();
+        co2OutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['co2'] / 7).toLocaleString();
+        wasteOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['waste'] / 7).toLocaleString();
     }
 
     updateNumbers(5);

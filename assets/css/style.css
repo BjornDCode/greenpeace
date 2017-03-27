@@ -313,19 +313,24 @@ h3 {
 	box-sizing: border-box;
 }
 
+.information-section h3 {
+	margin-bottom: 20px;
+}
+
 .information-section .info-container {
-	max-width: 960px;
-	margin: 0 auto;
-	display: flex;
+	padding: 20px;
 }
 
 .information-section .info-container .text {
-	width: 50%;
 	text-align: left;
 }
 
+.information-section .info-container .text p:first-of-type {
+	margin-top: 0;
+}
+
 .information-section .info-container .more-info-sections {
-	width: 50%;
+
 }
 
 .information-section .info-container .more-info-sections .more-info-link {
@@ -333,4 +338,58 @@ h3 {
 	background-color: #34B79E;
 	text-decoration: none;
 	color: #fff;
+	padding: 50px;
+	margin-bottom: 20px;
+}
+
+@media (min-width: 767px) {
+	.information-section h3 {
+		margin-bottom: 50px;
+	}
+	.information-section .info-container {
+		max-width: 960px;
+		margin: 0 auto;
+		display: flex;
+	}
+	.information-section .info-container .text {
+		width: 50%;
+		padding-right: 10px;
+	}
+
+	.information-section .info-container .more-info-sections {
+		width: 50%;
+		padding-left: 10px;
+	}
+}
+
+
+/*  Comments  */
+
+.fb-auth {
+	background-color: #3B5998;
+	border: none;
+	padding: 15px;
+	display: block;
+	color: #fff;
+	cursor: pointer;
+}
+
+.fb-auth::after {
+	content: '';
+	display: inline-block;
+	margin-left: 10px;
+	transform: translateY(2px);
+	width: 16px;
+	height: 16px;
+	background-image: url('../images/fb-logo.png');
+	background-size: 16px;
+
+}
+
+.comment-form, .fb-auth {
+	display: none;
+}
+
+.comment-form.visible, .fb-auth.visible {
+	display: block;
 }

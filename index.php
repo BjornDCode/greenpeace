@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Meat Matters for Greenpeace</title>
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body class="days5">
+<?php
+    include 'includes/header.php';
+ ?>
 
         <section class="main-section slider-section">
             <div class="overlay">
@@ -92,13 +85,15 @@
                     <p>Vivamus mollis feugiat dignissim. Etiam nec ullamcorper magna. Phasellus dolor ligula, efficitur et dapibus vel, pharetra facilisis neque. Sed hendrerit ut erat at egestas. Aliquam lectus felis, sodales nec nibh quis, ornare vestibulum purus. Cras viverra augue urna, non porttitor libero rutrum eu. Donec placerat metus a ullamcorper facilisis.</p>
                 </div>
                 <div class="more-info-sections">
-                    <a href="#" class="more-info-link">More information about greenhouse emissions</a>
-                    <a href="#" class="more-info-link">How you can reduce your meat consumption</a>
+                    <a href="articles/index.php?cat=Greenhouse+Gasses" class="more-info-link">More information about greenhouse emissions</a>
+                    <a href="articles/index.php?cat=Meat+Consumption" class="more-info-link">How you can reduce your meat consumption</a>
                     <a href="#" class="more-info-link">Cras viverra augue urna non porttitor libero</a>
                 </div>
             </div>
         </section>
 
         <script type="text/javascript" src="assets/js/script.js"></script>
-    </body>
-</html>
+
+<?php
+    include 'includes/footer.php';
+ ?>
