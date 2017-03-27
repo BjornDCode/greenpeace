@@ -48,7 +48,7 @@ h3 {
 
 .main-section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -244,4 +244,93 @@ h3 {
         width: 300px;
     }
 
+}
+
+/*  Impact & Savings  */
+
+.impact-section, .savings-section {
+	background-color: #333;
+	color: #fff;
+	padding-top: 30px;
+	box-sizing: border-box;
+}
+
+.impact-section .headline, .savings-section .headline {
+	margin-bottom: 50px;
+}
+
+.impact-section .table, .savings-section .table {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.impact-section .table .factor, .savings-section .table .factor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+.impact-section .table .factor img, .savings-section .table .factor img {
+	max-width: 85px;
+}
+
+.impact-section .table .factor span, .impact-section .table .factor p, .savings-section .table .factor span, .savings-section .table .factor p {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+@media (min-width: 767px) {
+	.impact-section .table, .savings-section .table {
+		height: calc(100vh - 30px - 76px - 50px);
+	}
+}
+
+@media (min-width: 767px) {
+	.impact-section .table, .savings-section .table {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.impact-section .table .factor, .savings-section .table .factor {
+		width: 33.33%;
+	}
+}
+
+/* Savings */
+
+.savings-section {
+	background-color: #34B79E;
+}
+
+/*  Information  */
+
+.information-section {
+	background-color: #fff;
+	color: #333;
+	padding-top: 30px;
+	box-sizing: border-box;
+}
+
+.information-section .info-container {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+}
+
+.information-section .info-container .text {
+	width: 50%;
+	text-align: left;
+}
+
+.information-section .info-container .more-info-sections {
+	width: 50%;
+}
+
+.information-section .info-container .more-info-sections .more-info-link {
+	display: block;
+	background-color: #34B79E;
+	text-decoration: none;
+	color: #fff;
 }
