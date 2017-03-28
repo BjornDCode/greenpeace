@@ -393,3 +393,19 @@ h3 {
 .comment-form.visible, .fb-auth.visible {
 	display: block;
 }
+
+.comments .comment-form label span {
+	font-weight: bold;
+}
+
+.comments .comment-form input, .comments .comment-form textarea {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.comments .comment-form .submit {
+	background-color:  #34B79E;
+	border: none;
+	color: #fff;
+	padding: 15px;
+}

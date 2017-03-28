@@ -7,11 +7,14 @@ var fbAuth = (function() {
     var input = body.querySelector('.username input');
     var usernames = ['lewisbs', 'adamborow'];
     var user = usernames[Math.floor(Math.random() * usernames.length)];
-    console.log(user);
+    var url = window.location.href;
+    var qs = '&user=' + user;
 
     button.addEventListener('click', function() {
+        // window.location.href = url + qs;
         button.classList.remove('visible');
         form.classList.add('visible');
+        input.value = user;
 
     })
 
