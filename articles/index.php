@@ -18,7 +18,9 @@
         <img class="articleImage" src="../assets/images/articles/<?= $article->image ?>">
         <p><?= $article->content ?></p>
         </article>
-    
+        <div class="backButton">
+    <button>back</button>
+    </div>
      <?php }
   ?>
     </section>
