@@ -5,6 +5,10 @@
     $cat = $_GET['cat'];
  ?>
 
+ <div class="backButton">
+     <button>back</button>
+ </div>
+
 <section class="articlesContainer" >
  <?php
      $sql = "SELECT * FROM articles WHERE category = '$cat'";
@@ -16,7 +20,6 @@
         <img class="articleImage" src="../assets/images/articles/<?= $article->image ?>">
         <p><?= $article->content ?></p>
         </article>
-
      <?php }
   ?>
     </section>

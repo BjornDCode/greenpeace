@@ -455,3 +455,14 @@ h3 {
 .singleArticleImage{
     width: 100% ;
 }
+
+.backButton{
+    position: fixed;
+    top: 50px;
+    left: 20px;
+
+
+}
+.backbutton button{
+        background-color: white;
+}
