@@ -137,6 +137,7 @@ h3 {
 
 .slider {
     /*removes default webkit styles*/
+	margin-bottom: 100px;
     -webkit-appearance: none;
 
     /*fix for FF unable to apply focus style bug */
@@ -223,6 +224,16 @@ h3 {
     background: #DED6D6;
 }
 
+.calculate {
+	background-color: #34B79E;
+	color: #fff;
+	border: none;
+	padding: 10px 40px;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+}
+
 @media (min-width: 600px) {
     .slider-section h2 {
         margin-bottom: 100px;
@@ -233,6 +244,7 @@ h3 {
     }
     .slider {
         width: 300px;
+		margin-bottom: 150px;
     }
     .slider::-webkit-slider-runnable-track {
         width: 300px;
@@ -244,6 +256,11 @@ h3 {
         width: 300px;
     }
 
+	.calculate {
+		padding: 20px;
+		width: 300px;
+	}
+
 }
 
 /*  Impact & Savings  */
@@ -253,11 +270,23 @@ h3 {
 	color: #fff;
 	padding-top: 30px;
 	box-sizing: border-box;
+	position: relative;
 }
 
 .impact-section .headline, .savings-section .headline {
 	margin-bottom: 50px;
 }
+
+/*.impact-section .table {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: transform .3s opacity .3s;
+}
+
+.impact-section .table.visible {
+	opacity: 1;
+	transform: translateY(0px);
+}*/
 
 .impact-section .table, .savings-section .table {
 	display: flex;
@@ -469,4 +498,69 @@ h3 {
 	border: 2px solid #333;
 	padding: 10px;
 	cursor: pointer;
+}
+
+
+/*  Social Links  */
+
+.social {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	justify-content: space-between;
+}
+
+.social a {
+	display: block;
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+
+.social .facebook {
+	background-color: #3B5998;
+}
+
+.social .twitter {
+	background-color: #00aced;
+}
+
+.social .facebook:before, .social .twitter:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.social .facebook:before {
+	background-image: url('../images/fb-logo.png');
+	background-size: 25px;
+}
+.social .twitter:before {
+	background-image: url('../images/twitter-logo.png');
+	background-size: 40px;
+}
+
+@media (min-width: 767px) {
+	.social {
+		position: absolute;
+		display: flex;
+		top: calc(50% - 70px);
+		left: 0;
+		right: auto;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	.social a:before {
+		transition: transform .3s;
+	}
+	.social a:hover:before {
+		transform: scale(1.2);
+	}
 }
