@@ -1,4 +1,15 @@
 <?php
+    if (isset($_POST['comment'])) {
+        $comment = $_POST['comment'];
+        $article_id = $_POST['article_id'];
+        $username = $_POST['username'];
+        $sql = "INSERT INTO comments (article_id, username, published_at, content) VALUES($article_id, '$username', NOW(), '$comment')";
+        $query = $db->query($sql);
+    }
+ ?>
+
+
+<?php
     $article_id = $_GET['id'] ? $_GET['id'] : NULL;
 
     $sql = "SELECT * FROM comments WHERE article_id = $article_id";
@@ -31,13 +42,3 @@
         </form>
     </div>
 </div>
-
-<?php
-    if (isset($_POST['comment'])) {
-        $comment = $_POST['comment'];
-        $article_id = $_POST['article_id'];
-        $username = $_POST['username'];
-        $sql = "INSERT INTO comments (article_id, username, published_at, content) VALUES($article_id, '$username', NOW(), '$comment')";
-        $query = $db->query($sql);
-    }
- ?>

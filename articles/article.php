@@ -4,8 +4,6 @@
 
     $id = $_GET['id'];
  ?>
-
- <h1>article</h1>
 <section class="singleArticleContainer">
  <?php
      $sql = "SELECT * FROM articles WHERE id = '$id'";

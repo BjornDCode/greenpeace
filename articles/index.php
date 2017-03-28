@@ -5,8 +5,6 @@
     $cat = $_GET['cat'];
  ?>
 
- <h1>articles</h1>
-
 <section class="articlesContainer" >
  <?php
      $sql = "SELECT * FROM articles WHERE category = '$cat'";
@@ -18,7 +16,7 @@
         <img class="articleImage" src="../assets/images/articles/<?= $article->image ?>">
         <p><?= $article->content ?></p>
         </article>
-    
+
      <?php }
   ?>
     </section>
