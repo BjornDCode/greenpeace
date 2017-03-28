@@ -91,7 +91,7 @@ h3 {
     padding: 5px;
 }
 
-.slider-section .overlay {
+.overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -103,6 +103,10 @@ h3 {
     align-items: center;
     justify-content: center;
     background: rgba(0,0,0, 0);
+}
+
+.impact-section .overlay, .savings-section .overlay {
+	background: rgba(0,0,0, 0.5);
 }
 
 .days1 .slider-section .overlay {
@@ -266,11 +270,26 @@ h3 {
 /*  Impact & Savings  */
 
 .impact-section, .savings-section {
-	background-color: #333;
 	color: #fff;
 	padding-top: 30px;
 	box-sizing: border-box;
 	position: relative;
+	background-size: cover;
+}
+/*.impact-section:before, .savings-section:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	background-color: rgba(0,0,0, 0.5);
+}*/
+
+.impact-section {
+	background-color: #333;
+	background-image: url('../images/industry.jpg');
 }
 
 .impact-section .headline, .savings-section .headline {
@@ -331,6 +350,7 @@ h3 {
 
 .savings-section {
 	background-color: #34B79E;
+	background-image: url('../images/field.jpg');
 }
 
 /*  Information  */

@@ -1,5 +1,3 @@
-- Impact & Savings ( BG image )
-- Slider ( Overlay - Green->Red?)
 - Share buttons ( Article )
 
 - Articles mobile
