@@ -22,13 +22,17 @@
     <ul>
         <div class="comment">
             <?php while ($comment = $query->fetchObject()) { ?>
-                <p><?= $comment->content ?></p>
+                <div class="comment">
+                    <p><span class="author"><?= $comment->username ?>: </span><?= $comment->content ?></p>
+                </div>
             <?php } ?>
         </div>
     </ul>
     <div class="auth">
+        <h4>Post a Comment</h4>
         <button type="button" name="button" class="fb-auth visible">Sign in with Facebook</button>
         <form class="comment-form" action="" method="post">
+
             <label class="username">
                 <span>Username</span>
                 <input type="text" name="username" value="">

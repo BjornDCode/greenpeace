@@ -9,14 +9,16 @@
 
 <section class="articlesContainer" >
  <?php
-     $sql = "SELECT * FROM articles WHERE category = '$cat'";
+     $sql = "SELECT id, title, category, published_at, image, SUBSTR(content, 1, 250) as excerpt FROM articles WHERE category = '$cat'";
+    //  $sql = "SELECT * FROM articles WHERE category = '$cat'";
      $query = $db->query($sql);
      while ($article = $query->fetchObject()) { ?>
 
     <article class="article">
-         <a class="articleTitle" href="article.php?id=<?= $article->id ?>"><?= $article->title ?></a>
+         <h3><a class="articleTitle" href="article.php?id=<?= $article->id ?>"><?= $article->title ?></a></h3>
         <img class="articleImage" src="../assets/images/articles/<?= $article->image ?>">
-        <p><?= $article->content ?></p>
+        <p class="excerpt"><?= $article->excerpt ?></p>
+        <a class="read-more" href="article.php?id=<?= $article->id ?>">Read More</a>
         </article>
      <?php }
   ?>

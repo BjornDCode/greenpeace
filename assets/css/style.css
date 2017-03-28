@@ -236,6 +236,11 @@ h3 {
 	text-transform: uppercase;
 	cursor: pointer;
 	outline: none;
+	transition: background .3s;
+}
+
+.calculate:hover {
+	background-color: #2FA38D;
 }
 
 @media (min-width: 600px) {
@@ -435,6 +440,19 @@ h3 {
 
 }
 
+.comments ul {
+	padding: 0;
+}
+
+.comments ul .comment .author {
+	font-weight: bold;
+}
+
+.comments .auth h4 {
+	font-size: 25px;
+	margin-bottom: 15px;
+}
+
 .comment-form, .fb-auth {
 	display: none;
 }
@@ -450,6 +468,9 @@ h3 {
 .comments .comment-form input, .comments .comment-form textarea {
 	width: 100%;
 	box-sizing: border-box;
+	margin-bottom: 20px;
+	border: 1px solid #333;
+	padding: 10px;
 }
 
 .comments .comment-form .submit {
@@ -462,7 +483,7 @@ h3 {
 /* ARTICLES (marcell) */
 
 .articlesContainer{
-    width: 960px;
+    max-width: 960px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -473,6 +494,7 @@ h3 {
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
+	margin-bottom: 100px;
 }
 
 .articleImage{
@@ -482,23 +504,48 @@ h3 {
 }
 
 .articleTitle{
-    text-decoration-line: none;
+    text-decoration: none;
     font-weight: bold;
+	color: #333;
+	margin-bottom: 30px;
 }
+
+.articleTitle:hover {
+	text-decoration: underline;
+}
+
+.article .read-more {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #34B79E;
+	color: #fff;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	transition: background .3s;
+}
+.article .read-more:hover {
+	background-color: #2FA38D;
+}
+
 
 /* SINGLE ARTICLES */
 
 .singleArticleContainer{
-    width: 700px;
+	padding: 20px;
+    max-width: 700px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 
 .singleArticle{
     width: 100%;
+}
 
+.singleArticle h1 {
+	margin-bottom: 30px;
 }
 
 .singleArticleImage{
@@ -509,8 +556,7 @@ h3 {
     position: absolute;
     top: 20px;
     left: 20px;
-
-
+	display: none;
 }
 .back-button button{
     background: #fff;
@@ -521,6 +567,13 @@ h3 {
 }
 
 
+
+@media (min-width: 767px) {
+	.back-button {
+		display: block;
+	}
+}
+
 /*  Social Links  */
 
 .social {
@@ -530,6 +583,10 @@ h3 {
 	left: 0;
 	right: 0;
 	justify-content: space-between;
+}
+
+.social.article-share {
+	position: fixed;
 }
 
 .social a {

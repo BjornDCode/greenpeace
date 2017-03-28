@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Meat Matters for Greenpeace</title>
-        <link rel="stylesheet" href="/greenpeace/assets/css/normalize.css">
-        <link rel="stylesheet" href="/greenpeace/assets/css/style.css">
+        <link rel="stylesheet" href="/kea/greenpeace/assets/css/normalize.css">
+        <link rel="stylesheet" href="/kea/greenpeace/assets/css/style.css">
     </head>
     <body class="body days5">
         <main class="page-container">
