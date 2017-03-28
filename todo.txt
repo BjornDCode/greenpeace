@@ -1,0 +1,11 @@
+- Impact & Savings ( BG image )
+- Slider ( Overlay - Green->Red?)
+- Share buttons ( Article )
+
+- Articles mobile
+- Button Hover
+- Delete Comments
+- Add Articles
+
+- Icons Transition
+- JS flip through numbers
