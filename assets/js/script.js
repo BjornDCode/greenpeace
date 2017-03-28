@@ -7,16 +7,42 @@ var slider = (function() {
     var sliderSection = body.querySelector('.slider-section');
     var output = sliderSection.querySelector('.output');
     var slider = sliderSection.querySelector('.slider');
+    var impactSection = body.querySelector('.impact-section');
+    var savingsSection = body.querySelector('.savings-section');
     slider.addEventListener('change', updateDays);
 
     function updateDays(e) {
         var days = e.target.value;
         output.innerHTML = days + ' days';
         body.className = 'days' + days;
-        impact.updateNumbers(Number(days));
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > impactSection.offsetTop / 2 || window.pageYOffset > savingsSection.offsetTop) {
+                impact.meatOutputContainer.classList.remove('hasRun');
+                impact.updateNumbers(Number(days));
+            }
+        });
         savings.updateNumbers(Number(days));
     }
 
+})();
+
+var countUp = (function() {
+    var options = {
+      useEasing : true,
+      useGrouping : true,
+      separator : ',',
+      decimal : '.',
+      prefix : '',
+      suffix : ''
+    };
+    function countElement(id, limit) {
+        var elem = new CountUp(id, 0, limit, 0, 2.5, options);
+        return elem;
+    }
+    return {
+        countElement: countElement
+    }
 })();
 
 // Update Impact Section
@@ -40,7 +66,12 @@ var impact = (function() {
     };
 
     function updateNumbers(days) {
-        meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7 * days).toLocaleString();
+        // meatOutputContainer.innerHTML = Math.round(dataPerDay['meat'] / 7 * days).toLocaleString();
+        if (!meatOutputContainer.classList.contains('hasRun')) {
+            meatOutputContainer.innerHTML = countUp.countElement(meatOutputContainer ,Math.round(dataPerDay['meat'] / 7 * days)).start();
+            meatOutputContainer.classList.add('hasRun');
+        }
+
         waterOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['water'] / 7 * days).toLocaleString();
         landOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] / 7 * days).toLocaleString();
         treesOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['land'] * dataPerDay['trees'] / 7 * days).toLocaleString();
@@ -48,10 +79,12 @@ var impact = (function() {
         wasteOutputContainer.innerHTML = Math.round(dataPerDay['meat'] * dataPerDay['waste'] / 7 * days).toLocaleString();
     }
 
+
     updateNumbers(5);
 
     return {
-        updateNumbers: updateNumbers
+        updateNumbers: updateNumbers,
+        meatOutputContainer: meatOutputContainer
     }
 })();
 
@@ -89,3 +122,10 @@ var savings = (function() {
         updateNumbers: updateNumbers
     }
 })();
+
+$(document).alton({
+    fullSlideContainer: 'page-container', // Tell Alton the full height container
+    singleSlideClass: 'main-section', // Tell Alton the full height slide class
+    useSlideNumbers: false, // Set to false if you don't want to use pagination
+    bodyContainer: 'body', // Tell Alton the body class
+});

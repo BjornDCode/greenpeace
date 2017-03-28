@@ -456,13 +456,17 @@ h3 {
     width: 100% ;
 }
 
-.backButton{
-    position: fixed;
-    top: 50px;
+.back-button{
+    position: absolute;
+    top: 20px;
     left: 20px;
 
 
 }
-.backbutton button{
-        background-color: white;
+.back-button button{
+    background: #fff;
+	text-transform: uppercase;
+	border: 2px solid #333;
+	padding: 10px;
+	cursor: pointer;
 }

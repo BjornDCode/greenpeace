@@ -3,11 +3,9 @@
     include '../includes/db.php';
 
     $cat = $_GET['cat'];
- ?>
 
- <div class="backButton">
-     <button>back</button>
- </div>
+    include '../includes/back-button.php';
+ ?>
 
 <section class="articlesContainer" >
  <?php
@@ -23,6 +21,7 @@
      <?php }
   ?>
     </section>
+    <script type="text/javascript" src="../assets/js/back.js"></script>
 
  <?php
     include '../includes/footer.php';

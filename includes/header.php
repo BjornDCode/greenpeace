@@ -7,4 +7,5 @@
         <link rel="stylesheet" href="/greenpeace/assets/css/normalize.css">
         <link rel="stylesheet" href="/greenpeace/assets/css/style.css">
     </head>
-    <body class="days5">
+    <body class="body days5">
+        <main class="page-container">
